@@ -1,0 +1,10 @@
+syntax = "proto2";
+
+package mypkg;
+
+import "validate/validate.proto";
+
+message OptOut {
+    optional int32 positive_int = 1 [(validate.rules).int32 = { gt: 0 }];
+    repeated string nel = 2 [(validate.rules).repeated.min_items = 1];
+}

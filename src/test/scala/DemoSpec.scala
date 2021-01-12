@@ -3,7 +3,7 @@ import mypkg.demo.{Demo, NonEmpty}
 import mypkg.PositiveInt
 import scalapb.validate.ValidationException
 
-class Spec extends munit.FunSuite {
+class DemoSpec extends munit.FunSuite {
   test("PositiveInt") {
     // the field positive_int was transformed to PositiveInt
     val m = Demo(

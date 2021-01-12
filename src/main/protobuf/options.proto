@@ -7,7 +7,6 @@ import "scalapb/validate.proto";
 import "validate/validate.proto";
 
 option (scalapb.options) = {
-  preprocessors: ["scalapb-validate-preprocessor"]
   scope: PACKAGE
   [scalapb.validate.file] {
     validate_at_construction: true
