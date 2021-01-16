@@ -4,7 +4,6 @@ package mypkg;
 
 import "scalapb/scalapb.proto";
 import "scalapb/validate.proto";
-import "validate/validate.proto";
 
 option (scalapb.options) = {
   preprocessors: ["scalapb-validate-preprocessor"]
@@ -12,14 +11,6 @@ option (scalapb.options) = {
   [scalapb.validate.file] {
     validate_at_construction: true
   }
-  field_transformations: [
-    {
-      when: {[validate.rules] {int32: {gt: 0}}}
-      set: {
-        type: "mypkg.PositiveInt"
-      }
-    }
-  ]
 };
 
 option (scalapb.validate.package) = {
